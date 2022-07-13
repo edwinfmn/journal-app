@@ -14,7 +14,7 @@ export const AuthLayout = ({ children, title = '' }) => {
                 className='box-shadow'
                 xs={ 3 }
                 sx={{ 
-                    width: { sm: 450 },
+                    width: { xs: '95%', sm: '75%', md: '60%', lg: '50%' },
                     backgroundColor: 'white', 
                     padding: 3, 
                     borderRadius: 2 }}
