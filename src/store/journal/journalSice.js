@@ -20,18 +20,19 @@ export const journalSlice = createSlice({
             state.isSaving = true;
         },
         addNewEmptyNote: (state, action) => {
-            // aqui no puede haber nada asíncrono
             state.notes.push( action.payload );
             state.isSaving = false;
         },
         setActiveNote: (state, action) => {
             state.active = action.payload;
+            state.messageSaved = '';
         },
         setNotes: (state, action) => {
             state.notes = action.payload;
         },
         setSaving: (state) => {
             state.isSaving = true;
+            state.messageSaved = '';
         },
         updateNote: (state, action) => { // payload: note
             state.isSaving = false;
@@ -42,6 +43,7 @@ export const journalSlice = createSlice({
                 return note;
             } );
             // TODO mostrar mensaje update OK
+            state.messageSaved = `${ action.payload.title }, actualizada correctamente`;
         },
         deleteNoteById: (state, action) => {
 
